@@ -8,7 +8,9 @@ body{margin:0;font-family:"Noto Sans KR",system-ui,sans-serif;background:#fafafa
 main{max-width:760px;margin:0 auto;padding:24px 16px}
 </style>
 <style data-studio="css">
-:root{--st-accent:#e2557a}
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+:root{--st-accent:#e2557a;--st-font:"Jua"}
+body,body *:not(i):not([class*="fa-"]):not([class*="material"]){font-family:"Jua",sans-serif!important}
 .st-nav{position:sticky;top:0;z-index:50;width:100%;box-sizing:border-box;background:#fff;background:rgba(255,255,255,.93);backdrop-filter:blur(6px);border-bottom:1px solid rgba(0,0,0,.08)}
 .st-nav-in{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:10px 12px;max-width:960px;margin:0 auto}
 .st-nav-a{display:inline-block;padding:8px 14px;border-radius:999px;text-decoration:none;color:#333;font-weight:700;font-size:15px;line-height:1.2}
@@ -151,19 +153,27 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
 .st-editing .st-prev,.st-editing .st-next{display:none}
 .st-editing dialog.st-modal{display:block;position:static;margin:12px auto;outline:2px dashed rgba(0,0,0,.25)}
 .st-editing .st-embed iframe{pointer-events:none}
+@media(max-width:600px){body{padding-bottom:76px!important}}
 </style></head>
 <body>
+<nav class="st-nav st-nav-tab" data-studio="nav">
+  <div class="st-nav-in">
+    <a class="st-nav-a is-on" href="index.html"><span class="st-nav-i" aria-hidden="true">🏠</span>홈</a>
+    <a class="st-nav-a" href="korea.html"><span class="st-nav-i" aria-hidden="true">📖</span>국어</a>
+    <a class="st-nav-a" href="math.html"><span class="st-nav-i" aria-hidden="true">🎯</span>수학</a>
+    <a class="st-nav-a" href="english.html"><span class="st-nav-i" aria-hidden="true">💬</span>영어</a>
+    <a class="st-nav-a" href="science.html"><span class="st-nav-i" aria-hidden="true">📷</span>과학</a>
+    <a class="st-nav-a" href="other.html"><span class="st-nav-i" aria-hidden="true">🎵</span>기타 과목</a>
+  </div>
+</nav>
+
 <main>
-<h1 class="st-h">나의 보고서 정리본</h1>
+<h1 class="st-h st-hv-grow st-g-point st-gtx">학습 자료 정리 사이트</h1>
+<button class="st-btn st-hv-glow st-g-night" type="button" data-st="dark" data-st-in="fade">🌙 다크 모드</button>
+
 
 </main>
-<form class="st-sec st-dform" data-st="dform" data-tab="내 데이터" data-api="https://script.google.com/macros/s/AKfycbyY05RLjggwvJHAkxJ2RmrLl5VwZ2JAJLLHud2THgKaF_lmSukmRUVMFsp74yOkboB_BA/exec">
-  <h2 class="st-h">기록하기</h2>
-  <label class="st-fl"><span>보고서나 ppt 주소</span><input name="이름" required="" type="text" maxlength="100"></label>
-  <label class="st-fl"><span>내용</span><textarea name="내용" required="" maxlength="500"></textarea></label>
-  <button class="st-btn st-sub" type="submit">저장하기</button>
-  <p class="st-fmsg" aria-live="polite"></p>
-</form>
+
 
 <script data-studio="js">
 (function () {
@@ -423,4 +433,3 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
   })();
 </script>
 </body></html>
-
